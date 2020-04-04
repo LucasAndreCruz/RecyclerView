@@ -28,11 +28,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
+        holder.titulo.setText("Título de teste");
+        holder.genero.setText("Comédia");
+        holder.ano.setText("2017");
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 10;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
