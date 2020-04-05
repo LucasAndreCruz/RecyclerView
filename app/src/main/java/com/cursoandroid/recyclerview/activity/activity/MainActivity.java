@@ -1,10 +1,12 @@
 package com.cursoandroid.recyclerview.activity.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import com.cursoandroid.recyclerview.R;
 import com.cursoandroid.recyclerview.activity.adapter.Adapter;
@@ -28,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
         //Listagem de filmes
         this.criarFilmes();
         // configurar adapter
-        Adapter adapter = new Adapter();
+        Adapter adapter = new Adapter(listaFilmes);
 
         // configurar recyclerview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         recyclerView.setAdapter(adapter);
 
     }
